@@ -1,3 +1,61 @@
 [gd_scene format=3 uid="uid://beh204nsxr4cd"]
 
+[ext_resource type="Texture2D" uid="uid://l14cirpbl4ij" path="res://Background.png" id="1_cn3xy"]
+[ext_resource type="Texture2D" uid="uid://dgpp1ykjqmq8s" path="res://Wings_other-removebg-preview.png" id="2_cn3xy"]
+
 [node name="level_scene" type="Node2D" unique_id=403533065]
+
+[node name="BackGround" type="TextureRect" parent="." unique_id=874621421]
+offset_right = 1153.7778
+offset_bottom = 649.0
+texture = ExtResource("1_cn3xy")
+expand_mode = 1
+
+[node name="WingContainer" type="HBoxContainer" parent="." unique_id=298607152]
+offset_left = 160.0
+offset_top = 141.0
+offset_right = 1101.0
+offset_bottom = 303.0
+
+[node name="Wing" type="TextureRect" parent="WingContainer" unique_id=2117233342]
+layout_mode = 2
+texture = ExtResource("2_cn3xy")
+expand_mode = 3
+
+[node name="Wing2" type="TextureRect" parent="WingContainer" unique_id=722911687]
+layout_mode = 2
+texture = ExtResource("2_cn3xy")
+expand_mode = 3
+
+[node name="Wing3" type="TextureRect" parent="WingContainer" unique_id=998567637]
+layout_mode = 2
+texture = ExtResource("2_cn3xy")
+expand_mode = 3
+
+[node name="Wing4" type="TextureRect" parent="WingContainer" unique_id=362986659]
+layout_mode = 2
+texture = ExtResource("2_cn3xy")
+expand_mode = 3
+
+[node name="Wing5" type="TextureRect" parent="WingContainer" unique_id=982428629]
+layout_mode = 2
+texture = ExtResource("2_cn3xy")
+expand_mode = 3
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=1506270774]
+offset_left = 563.0
+offset_top = 487.0
+offset_right = 632.0
+offset_bottom = 565.0
+theme_override_colors/default_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+theme_override_font_sizes/normal_font_size = 42
+text = "0.0"
+
+[node name="Level" type="RichTextLabel" parent="." unique_id=1503554610]
+offset_left = 525.0
+offset_top = 361.0
+offset_right = 699.0
+offset_bottom = 421.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 42
+text = "Level #"
