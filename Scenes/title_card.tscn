@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://b2u038ukwfnsx"]
+
+[ext_resource type="Script" uid="uid://dcllsetibyfht" path="res://Scenes/title_card.gd" id="1_8terc"]
+[ext_resource type="Texture2D" uid="uid://l14cirpbl4ij" path="res://Background.png" id="1_cgbtb"]
+
+[node name="TitleCard" type="Node2D" unique_id=286225528]
+script = ExtResource("1_8terc")
+
+[node name="BackGround" type="TextureRect" parent="." unique_id=1044792926]
+offset_top = -2.0
+offset_right = 1984.0
+offset_bottom = 1114.0
+texture = ExtResource("1_cgbtb")
+expand_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=1718774401]
+clip_contents = false
+offset_left = 848.0
+offset_top = 103.0
+offset_right = 1643.0
+offset_bottom = 314.0
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 108
+text = "The Adventure"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1185297085]
+offset_left = 1060.0
+offset_top = 425.0
+offset_right = 1410.0
+offset_bottom = 1078.0
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=1263452194]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 26
+text = "Start Game"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=864751969]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 26
+text = "Settings"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=928213153]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 26
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
