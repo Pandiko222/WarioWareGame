@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ciejia0s1fpcw"]
+
+[ext_resource type="Script" uid="uid://bmvgywdn8n08i" path="res://player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://dj4306udnilis" path="res://Flappy_Bird_Blue_Minecraft_PNG-removebg-preview.png" id="2_6t5aa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_enep4"]
+radius = 30.594116
+
+[node name="Player" type="CharacterBody2D" unique_id=1055582211]
+script = ExtResource("1_cvnsp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1679689328]
+position = Vector2(7.9999995, -4)
+scale = Vector2(0.3443775, 0.34437755)
+texture = ExtResource("2_6t5aa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1425233133]
+shape = SubResource("CircleShape2D_enep4")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1235959109]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=898772914]
+shape = SubResource("CircleShape2D_enep4")

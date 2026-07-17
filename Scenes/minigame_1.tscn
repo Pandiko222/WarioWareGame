@@ -1,0 +1,233 @@
+[gd_scene format=3 uid="uid://cwrofu36p673k"]
+
+[ext_resource type="Script" uid="uid://e3t22wjpguyj" path="res://Scenes/minigame_1.gd" id="1_5txvl"]
+[ext_resource type="Texture2D" uid="uid://d3g542vl8r8ay" path="res://blue sky background in pixel art style.png" id="1_enoba"]
+[ext_resource type="PackedScene" uid="uid://ciejia0s1fpcw" path="res://Scenes/player.tscn" id="2_11mgy"]
+[ext_resource type="Texture2D" uid="uid://dgpp1ykjqmq8s" path="res://Wings_other-removebg-preview.png" id="3_f6tb2"]
+[ext_resource type="Script" uid="uid://du58gkmjwmmy" path="res://Scenes/wing.gd" id="3_o6yob"]
+[ext_resource type="PackedScene" uid="uid://b3j4tg2ebfph3" path="res://Scenes/themed_timer.tscn" id="6_0uv5o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enep4"]
+size = Vector2(1153, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_veo6f"]
+size = Vector2(380, 25)
+
+[sub_resource type="Animation" id="Animation_5txvl"]
+resource_name = "Float"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wing2/Wing:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(146, 299), Vector2(148, 294)]
+}
+
+[sub_resource type="Animation" id="Animation_0uv5o"]
+resource_name = "Float3"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wing3/Wing:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(804, 167), Vector2(807, 162)]
+}
+
+[sub_resource type="Animation" id="Animation_f6tb2"]
+resource_name = "Floating "
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wing/Wing:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(556, 412), Vector2(556, 408)]
+}
+
+[sub_resource type="Animation" id="Animation_o6yob"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wing2/Wing:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(146, 299)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Wing3/Wing:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(804, 167)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5txvl"]
+_data = {
+&"Float": SubResource("Animation_5txvl"),
+&"Float3": SubResource("Animation_0uv5o"),
+&"Floating ": SubResource("Animation_f6tb2"),
+&"RESET": SubResource("Animation_o6yob")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_enep4"]
+radius = 26.076809
+
+[node name="minigame_1" type="Node2D" unique_id=1105542495]
+script = ExtResource("1_5txvl")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1413530191]
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="ScrollingBackGround" type="TextureRect" parent="Parallax2D" unique_id=1208992931]
+offset_top = -2.0
+offset_right = 1155.0
+offset_bottom = 647.0
+texture = ExtResource("1_enoba")
+
+[node name="Platform1" type="StaticBody2D" parent="." unique_id=417757346]
+
+[node name="ColorRect" type="ColorRect" parent="Platform1" unique_id=601378387]
+offset_top = 608.0
+offset_right = 1153.0
+offset_bottom = 648.0
+color = Color(0.5868231, 0.41172257, 0.31462282, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=33227112]
+position = Vector2(576.5, 628)
+shape = SubResource("RectangleShape2D_enep4")
+debug_color = Color(0, 0.6, 0.69803923, 0)
+
+[node name="Platform2" type="StaticBody2D" parent="." unique_id=1838219128]
+
+[node name="ColorRect" type="ColorRect" parent="Platform2" unique_id=1735005483]
+offset_left = 405.0
+offset_top = 480.0
+offset_right = 785.0
+offset_bottom = 505.0
+color = Color(0.5868231, 0.41172257, 0.31462282, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=1139011456]
+position = Vector2(595, 492.5)
+shape = SubResource("RectangleShape2D_veo6f")
+
+[node name="Platform3" type="StaticBody2D" parent="." unique_id=1436590990]
+
+[node name="ColorRect" type="ColorRect" parent="Platform3" unique_id=1015915749]
+offset_top = 366.0
+offset_right = 380.0
+offset_bottom = 391.0
+color = Color(0.5868231, 0.41172257, 0.31462282, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3" unique_id=441395984]
+position = Vector2(190, 378.5)
+shape = SubResource("RectangleShape2D_veo6f")
+
+[node name="Plactform4" type="StaticBody2D" parent="." unique_id=2011265807]
+
+[node name="ColorRect" type="ColorRect" parent="Plactform4" unique_id=84244508]
+offset_left = 499.0
+offset_top = 235.0
+offset_right = 879.0
+offset_bottom = 260.0
+color = Color(0.5868231, 0.41172257, 0.31462282, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plactform4" unique_id=121268834]
+position = Vector2(689, 247.5)
+shape = SubResource("RectangleShape2D_veo6f")
+
+[node name="Player" parent="." unique_id=1055582211 instance=ExtResource("2_11mgy")]
+position = Vector2(126, 505)
+
+[node name="Wing" type="Node2D" parent="." unique_id=797358013]
+script = ExtResource("3_o6yob")
+
+[node name="Wing" type="TextureRect" parent="Wing" unique_id=140670772]
+offset_left = 556.0
+offset_top = 412.0
+offset_right = 633.0
+offset_bottom = 489.0
+texture = ExtResource("3_f6tb2")
+expand_mode = 1
+
+[node name="animation" type="AnimationPlayer" parent="Wing" unique_id=1767756182]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_5txvl")
+
+[node name="Area2D" type="Area2D" parent="Wing" unique_id=740827216]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wing/Area2D" unique_id=1456117484]
+position = Vector2(599, 451)
+shape = SubResource("CircleShape2D_enep4")
+
+[node name="Wing2" type="Node2D" parent="." unique_id=1588287816]
+script = ExtResource("3_o6yob")
+
+[node name="Wing" type="TextureRect" parent="Wing2" unique_id=2062516181]
+offset_left = 146.0
+offset_top = 299.0
+offset_right = 223.0
+offset_bottom = 376.0
+texture = ExtResource("3_f6tb2")
+expand_mode = 1
+
+[node name="animation" type="AnimationPlayer" parent="Wing2" unique_id=470632213]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_5txvl")
+
+[node name="Area2D" type="Area2D" parent="Wing2" unique_id=2047003815]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wing2/Area2D" unique_id=634827073]
+position = Vector2(189, 339)
+shape = SubResource("CircleShape2D_enep4")
+
+[node name="Wing3" type="Node2D" parent="." unique_id=1543099756]
+script = ExtResource("3_o6yob")
+
+[node name="Wing" type="TextureRect" parent="Wing3" unique_id=116907073]
+offset_left = 804.0
+offset_top = 167.0
+offset_right = 881.0
+offset_bottom = 244.0
+texture = ExtResource("3_f6tb2")
+expand_mode = 1
+
+[node name="animation" type="AnimationPlayer" parent="Wing3" unique_id=608753509]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_5txvl")
+
+[node name="Area2D" type="Area2D" parent="Wing3" unique_id=751823347]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wing3/Area2D" unique_id=676742894]
+position = Vector2(845, 207)
+shape = SubResource("CircleShape2D_enep4")
+
+[node name="Themed Timer" parent="." unique_id=1196132479 instance=ExtResource("6_0uv5o")]
+position = Vector2(1052, 23)
