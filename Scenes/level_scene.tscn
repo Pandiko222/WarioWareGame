@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://beh204nsxr4cd"]
 
+[ext_resource type="Script" uid="uid://ca6ywlyqh4ghv" path="res://Scenes/level_scene.gd" id="1_c7xwe"]
 [ext_resource type="Texture2D" uid="uid://l14cirpbl4ij" path="res://Background.png" id="1_cn3xy"]
 [ext_resource type="Texture2D" uid="uid://dgpp1ykjqmq8s" path="res://Wings_other-removebg-preview.png" id="2_cn3xy"]
 
 [node name="level_scene" type="Node2D" unique_id=403533065]
+script = ExtResource("1_c7xwe")
 
 [node name="BackGround" type="TextureRect" parent="." unique_id=874621421]
 offset_right = 1153.7778
